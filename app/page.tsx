@@ -352,6 +352,19 @@ export default function Home() {
             Created by timeguessr.com
           </a>
         </div>
+        <a
+          className="fixed bottom-4 right-4 flex items-center gap-2 font-sans text-xs uppercase tracking-[0.35em] text-slate-500 transition hover:text-slate-700"
+          href="https://github.com/gusow/readcyrillic"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/github-mark.svg"
+            alt=""
+            className="h-4 w-4 opacity-70"
+          />
+          GitHub
+        </a>
       </main>
     </div>
   );
