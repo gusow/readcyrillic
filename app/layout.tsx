@@ -20,7 +20,31 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: "Read Cyrillic",
-  description: "Practice Russian words and check pronunciation when ready.",
+  description:
+    "Learn the Cyrillic alphabet with quick Russian word practice and pronunciation checks.",
+  keywords: [
+    "learn cyrillic alphabet",
+    "cyrillic alphabet",
+    "how to learn cyrillic",
+    "learn russian alphabet",
+    "russian pronunciation practice",
+    "read cyrillic",
+  ],
+  alternates: {
+    canonical: "https://readcyrillic.com",
+  },
+  openGraph: {
+    title: "Read Cyrillic",
+    description:
+      "Learn the Cyrillic alphabet with quick Russian word practice and pronunciation checks.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Read Cyrillic",
+    description:
+      "Learn the Cyrillic alphabet with quick Russian word practice and pronunciation checks.",
+  },
   icons: {
     icon: [
       {

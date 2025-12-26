@@ -141,16 +141,6 @@ export default function Home() {
 
   const current = WORDS[index];
 
-  const handleNext = () => {
-    const nextQueue = tickQueue(reviewQueue);
-    setReviewQueue(nextQueue);
-    setIndex(() => pickNextIndex(index, stats, nextQueue));
-    setRevealed(false);
-    if (canSpeak) {
-      window.speechSynthesis.cancel();
-    }
-  };
-
   const handleGrade = (isCorrect: boolean) => {
     const nextStats = stats.map((item, idx) => {
       if (idx !== index) return item;
@@ -238,7 +228,7 @@ export default function Home() {
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-3">
               <p className="font-display text-xs uppercase tracking-[0.45em] text-[color:var(--accent-strong)]">
-                Read Cyrillic
+                Read Cyrillic - learn the cyrillic alphabet
               </p>
               <h1 className="font-display text-[26px] leading-tight text-[color:var(--foreground)] sm:text-3xl">
                 See the word, say it out loud.
@@ -332,17 +322,9 @@ export default function Home() {
                 </>
               ) : null}
             </div>
-            <div className="font-ui flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:items-center">
-              <button
-                className="rounded-full border border-black/10 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-slate-700 transition hover:border-black/20"
-                onClick={handleNext}
-              >
-                Next word
-              </button>
-            </div>
           </div>
         </section>
-        <div className="font-ui mt-5 text-center text-xs uppercase tracking-[0.4em] text-slate-500">
+        <div className="font-ui mt-5 flex flex-col items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-slate-500 sm:flex-row sm:gap-3 sm:text-xs sm:tracking-[0.4em]">
           <a
             className="transition hover:text-slate-700"
             href="https://timeguessr.com"
@@ -351,9 +333,16 @@ export default function Home() {
           >
             Created by timeguessr.com
           </a>
+          <span
+            className="mx-1 hidden h-3 w-px bg-slate-300 align-middle sm:inline-block"
+            aria-hidden="true"
+          />
+          <a className="transition hover:text-slate-700" href="/about">
+            About
+          </a>
         </div>
         <a
-          className="fixed bottom-4 right-4 flex items-center gap-2 font-sans text-xs uppercase tracking-[0.35em] text-slate-500 transition hover:text-slate-700"
+          className="fixed bottom-4 right-4 hidden items-center gap-2 font-sans text-xs uppercase tracking-[0.35em] text-slate-500 transition hover:text-slate-700 sm:flex"
           href="https://github.com/gusow/readcyrillic"
           target="_blank"
           rel="noopener noreferrer"
